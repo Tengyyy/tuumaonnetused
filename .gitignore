@@ -2,22 +2,22 @@
 
 # dependencies
 tuumaonnetused/node_modules/
-/.pnp
-.pnp.js
+tuumaonnetused/.pnp
+tuumaonnetused/.pnp.js
 
 # testing
-/coverage
+tuumaonnetused/coverage
 
 # production
-/build
+tuumaonnetused/build
 
 # misc
-.DS_Store
+tuumaonnetused/.DS_Store
 tuumaonnetused/.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+tuumaonnetused/.env.development.local
+tuumaonnetused/.env.test.local
+tuumaonnetused/.env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+tuumaonnetused/npm-debug.log*
+tuumaonnetused/yarn-debug.log*
+tuumaonnetused/yarn-error.log*
