@@ -1,0 +1,375 @@
+
+
+
+
+
+*:focus {
+    outline: 0;
+}
+
+.infoWindowClosed {
+    
+    
+    width: 450px;
+    height: 100%;
+    background-color: white;
+    
+    position: absolute;
+    left: -450px;
+    z-index: 12;
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms; 
+    transition-property: left;
+}
+
+
+.infoWindowOpen {
+    max-width: 450px;
+    
+    
+    width: 40%;
+    height: 100%;
+    background-color: white;
+    
+    position: absolute;
+    left: 0px;
+    z-index: 12;
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms; 
+    transition-property: left;
+}
+
+
+.innerContainer {
+    margin: 15px;
+    margin-top: 80px;
+    height: auto;
+}
+
+.wrapper {
+    opacity: 0;
+}
+
+
+figure {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+
+}
+.infoImage {
+    
+    width:  100%;
+    
+    height: auto;
+    object-fit: cover;
+    display: block;
+    object-position: 50%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    
+    
+}
+
+
+.arrowRight {
+    left: 0px;
+    position: absolute;
+    top: 50%;
+    
+    width: 50px;
+    height: 100px;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms; 
+    transition-property: left;
+   
+    background-color: rgba(255, 255, 255, 0.8);;
+    transform: translateY(-50%) scaleX(-1);
+    cursor: pointer;
+    outline: none;
+
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 12;
+}
+
+
+.arrowLeft {
+    left: 450px;
+    
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    width: 50px;
+    height: 100px;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms; 
+    transition-property: left;
+    background-color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    z-index: 12;
+}
+.arrowHidden {
+    left: 0;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 200px;
+    visibility: hidden;
+    transition-timing-function: ease-in-out;
+    transition-duration: 200ms; 
+    transition-property: left;
+}
+
+
+.arrow {
+    opacity: 1;
+    object-fit: contain;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+
+}
+
+#title {
+    position: absolute;
+    z-index: 2;
+    right: 0%;
+    top: 0px;
+    padding-right: 20px;
+    font-family: 'Times New Roman, Times, serif';
+    pointer-events: none;
+    font-size: 30px;
+}
+
+
+
+
+
+#body {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+.imageContainer {
+    width: 100%;
+    padding-top: 20px;
+    
+}
+
+
+
+.container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 320px;
+    height: 310px;
+    pointer-events: none;
+}
+
+#legend {
+    height: 158px;
+    width: 250px;
+    left: 65px;
+    top: 0px;
+    position: relative;
+    z-index: 13;
+    background-color: white;
+    border: 2px solid #000;
+    
+    padding-top: 20px;
+    padding-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    
+    pointer-events: auto;
+} /* Kaardi legend */
+
+#legend:after {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    border-top: 0px solid #000;
+    border-left: 0px solid #000;
+    top: 100%;
+    left: 50%;
+    margin-left: -22px;
+    content: '';
+    transform: rotate(45deg);
+    margin-top: -25px;
+    background-color: white;
+    z-index: 13;
+} /* Väike nooleke legendi alumisel küljel */
+
+.legendImage {
+    width: 20px;
+    height: 20px;
+    z-index: 10;
+} /* Õnnetuste märgised legendi aknas */
+
+.definition {
+    display: inline;
+    font-size: 1.2rem;
+} /* Õnnetuste märgistele järgnev tekst */
+
+.close2 {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: -5px;
+    border: none;
+    outline: none;
+    background: none;
+    color: #ccc;
+} /* Rist legendi sulgemiseks */
+
+.close2:hover,.close2:focus{
+    cursor: pointer;
+    color: rgb(0, 0, 0);  
+} /* Rist hiirega peale liikudes */
+
+#infoButton {
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+    z-index: 4;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: url(infoLogo.png); /* can be turned into a local url if hosting on a website */
+    background-size: 100%;
+    width: 50px;
+    height: 50px;
+    transition: transform .3s;
+    pointer-events: auto;
+    transform: scale(2);
+    filter: none;
+} /* Info nupp */
+
+#infoButton:hover {
+    transform: scale(2.5) !important;
+    filter: invert(35%) sepia(13%) saturate(3583%) hue-rotate(186deg) brightness(99%) contrast(79%) !important;
+} /* Info nupp hiirega peale liikudes */
+
+
+.close {
+    position: absolute;
+    top: 25px;
+    right: 5px;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-right: -5px;
+    border: none;
+    outline: none;
+    background: none;
+    color: #ccc;
+    display:none;
+}
+
+.close:hover,.close:focus{
+    cursor: pointer;
+    color: rgb(0, 0, 0); 
+    display: none; 
+}
+
+.marker {
+    transform: scale(0.75)
+}
+
+
+
+
+.searchBarContainer {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    max-width: 451px;
+    width: 40%;
+    height: auto;
+    z-index: 16;
+    
+}
+
+
+
+@media only screen and (max-width: 1125px) {
+    .arrowLeft {
+
+        left: 40%;
+    }
+
+    .infoWindowOpen {
+        width: 40%;
+    }
+
+    .infoWindowClosed {
+        left: -40%;
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    #title {
+        display: none;
+    }
+
+    .arrowLeft {
+        left: 100%;
+    }
+
+    .infoWindowOpen, .searchBarContainer, .infoWindowClosed {
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .infoWindowOpen {
+        left: 0%;
+    }
+
+    .close, .close:hover, .close:focus {
+        display: inline-block;
+    }
+
+    .infoWindowClosed {
+        left: -100%;
+    }
+
+    #legend, #legend:after {
+        z-index: 11;
+    }
+}
+
+  @media only screen and (max-height: 600px) {
+    #legend:after {
+      display: none;
+    }
+    
+    #legend {
+        height: 158px;
+        width: 250px;
+        left: 70px;
+        top: 152px;
+        position: absolute;
+    }
+  }
+
+  
+  
